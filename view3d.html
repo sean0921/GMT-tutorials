@@ -1,0 +1,333 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-TW" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>15. 3D 視圖 &mdash; GMT 教學手冊v1.2</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+ <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+ <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
+  <link rel="stylesheet" href="_static/style.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜尋" href="search.html" />
+    <link rel="next" title="16. 繪製震源機制解" href="focal_mech.html" />
+    <link rel="prev" title="14. 色階檔的編修與呈現" href="editing_cpt_colorbar.html" /> 
+</head>
+ <script type="text/javascript">var _jf = _jf || [];_jf.push(['p','39630']);_jf.push(['_setFont','sourcehansans-tc-light','css','.sourcehansans-tc-light']);_jf.push(['_setFont','sourcehansans-tc-light','alias','sourcehansans-tc']);_jf.push(['_setFont','sourcehansans-tc-light','weight',200]);_jf.push(['_setFont','sourcehansans-tc-regular','css','.sourcehansans-tc-regular']);_jf.push(['_setFont','sourcehansans-tc-regular','alias','sourcehansans-tc']);_jf.push(['_setFont','sourcehansans-tc-regular','weight',400]);_jf.push(['_setFont','cwtexqyuan','css','.cwtexqyuan']);_jf.push(['_setFont','cwtexqyuan','alias','cwtexqyuan']);_jf.push(['_setFont','cwtexqyuan','weight',500]);_jf.push(['_setFont','xingothic-tc-w7','css','.xingothic-tc-w7']);_jf.push(['_setFont','xingothic-tc-w7','alias','xingothic-tc']);_jf.push(['_setFont','xingothic-tc-w7','weight',700]);_jf.push(['_setFont','jf-jinxuan-medium','css','.jf-jinxuan-medium']);_jf.push(['_setFont','jf-jinxuan-medium','alias','jf-jinxuan']);_jf.push(['_setFont','jf-jinxuan-medium','weight',600]);(function(f,q,c,h,e,i,r,d){var k=f._jf;if(k.constructor===Object){return}var l,t=q.getElementsByTagName("html")[0],a=function(u){for(var v in k){if(k[v][0]==u){if(false===k[v][1].call(k)){break}}}},j=/\S+/g,o=/[\t\r\n\f]/g,b=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,g="".trim,s=g&&!g.call("\uFEFF\xA0")?function(u){return u==null?"":g.call(u)}:function(u){return u==null?"":(u+"").replace(b,"")},m=function(y){var w,z,v,u,x=typeof y==="string"&&y;if(x){w=(y||"").match(j)||[];z=t[c]?(" "+t[c]+" ").replace(o," "):" ";if(z){u=0;while((v=w[u++])){if(z.indexOf(" "+v+" ")<0){z+=v+" "}}t[c]=s(z)}}},p=function(y){var w,z,v,u,x=arguments.length===0||typeof y==="string"&&y;if(x){w=(y||"").match(j)||[];z=t[c]?(" "+t[c]+" ").replace(o," "):"";if(z){u=0;while((v=w[u++])){while(z.indexOf(" "+v+" ")>=0){z=z.replace(" "+v+" "," ")}}t[c]=y?s(z):""}}},n;k.push(["_eventActived",function(){p(h);m(e)}]);k.push(["_eventInactived",function(){p(h);m(i)}]);k.addScript=n=function(u,A,w,C,E,B){E=E||function(){};B=B||function(){};var x=q.createElement("script"),z=q.getElementsByTagName("script")[0],v,y=false,D=function(){x.src="";x.onerror=x.onload=x.onreadystatechange=null;x.parentNode.removeChild(x);x=null;a("_eventInactived");B()};if(C){v=setTimeout(function(){D()},C)}x.type=A||"text/javascript";x.async=w;x.onload=x.onreadystatechange=function(G,F){if(!y&&(!x.readyState||/loaded|complete/.test(x.readyState))){y=true;if(C){clearTimeout(v)}x.src="";x.onerror=x.onload=x.onreadystatechange=null;x.parentNode.removeChild(x);x=null;if(!F){setTimeout(function(){E()},200)}}};x.onerror=function(H,G,F){if(C){clearTimeout(v)}D();return true};x.src=u;z.parentNode.insertBefore(x,z)};a("_eventPreload");m(h);n(r,"text/javascript",false,3000)})(this,this.document,"className","jf-loading","jf-active","jf-inactive","//ds.justfont.com/js/stable/v/5.0.2/id/166657211014");</script>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> GMT 教學手冊
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+ <div class="langcenter"> <nav class="menu"> <ul class="clearfix"> <li class="current-item"> <a href="#" class="clicker">中文 (台灣) <span class="arrow">&#9660;</span></a> <ul class="sub-menu"> <li><a href="view3d.html">中文 (台灣)</a></li> <li><a href="en/view3d.html">English</a></li> </ul> </li> </ul> </nav> </div>
+ </div>
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro_install.html">1. GMT / PyGMT 簡介與安裝</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">2. 推薦搭配的軟體或套件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_concept.html">3. 基本概念與名詞</a></li>
+<li class="toctree-l1"><a class="reference internal" href="making_first_map.html">4. 製作第一張地圖</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coloring_topography.html">5. 為地形圖上色</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pen_and_painting.html">6. 畫筆與調色技巧</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scatter_plot.html">7. XY 點散佈圖</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpt_colormap.html">8. 使用色階表為網格資料著色</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot_vector_data.html">9. 繪製向量式資料</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layout_design.html">10. 版面設計與地圖的幾何布局</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hillshading.html">11. 暈渲地圖</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contour_and_profile.html">12. 等高線地圖及地形剖面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="map_elements.html">13. 加入地圖元素</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editing_cpt_colorbar.html">14. 色階檔的編修與呈現</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">15. 3D 視圖</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">15.1. 目標</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">15.2. 使用的指令與概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">15.3. 前置作業</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">15.4. 操作流程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">15.5. 指令稿</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">15.6. 習題</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="focal_mech.html">16. 繪製震源機制解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draping.html">17. 在 3D 地形上覆蓋地圖</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raster_calculator.html">18. 網格計算機</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_img_processing.html">19. 基本影像處理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stat_histogram.html">20. 輸出統計資訊與直方圖</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression_basics.html">21. 進行迴歸分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_credit.html">22. 資料來源與參考文獻</a></li>
+<li class="toctree-l1"><a class="reference internal" href="command_index.html">23. 指令索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">24. 章節地圖索引</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">GMT 教學手冊</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">15. </span>3D 視圖</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+ <a href="https://github.com/whyjz/GMT-tutorials"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="d">
+<h1><span class="section-number">15. </span>3D 視圖<a class="headerlink" href="#d" title="本標題的永久連結">¶</a></h1>
+<div class="section" id="id1">
+<h2><span class="section-number">15.1. </span>目標<a class="headerlink" href="#id1" title="本標題的永久連結">¶</a></h2>
+<img alt="_images/afar.png" id="id2" src="_images/afar.png" />
+<p>直接觀看<a class="reference internal" href="#id6">指令稿</a></p>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">15.2. </span>使用的指令與概念<a class="headerlink" href="#id3" title="本標題的永久連結">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">gmtset</span></code> - 更改 GMT 的預設作圖參數</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grdcut</span></code> - <strong>裁剪網格檔</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grdgradient</span></code> - 計算網格檔的梯度與照明值</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">psxy</span></code> - 輸出檔頭與檔尾</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">psbasemap</span></code> - <strong>製作 3-D 底圖與添加地圖元素</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grdview</span></code> - <strong>繪製 3-D 視圖</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">psconvert</span></code> - 把 ps 檔轉成 png 檔</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">15.3. </span>前置作業<a class="headerlink" href="#id4" title="本標題的永久連結">¶</a></h2>
+</div>
+<div class="section" id="id5">
+<h2><span class="section-number">15.4. </span>操作流程<a class="headerlink" href="#id5" title="本標題的永久連結">¶</a></h2>
+</div>
+<div class="section" id="id6">
+<h2><span class="section-number">15.5. </span>指令稿<a class="headerlink" href="#id6" title="本標題的永久連結">¶</a></h2>
+<p>本地圖的最終指令稿如下：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">in_grd</span><span class="o">=</span><span class="s2">&quot;ETOPO1_Bed_g_gmt4_Afar.grd&quot;</span>
+<span class="nv">in_shadow</span><span class="o">=</span><span class="s2">&quot;ETOPO1_Bed_g_gmt4_Afar_shadow.grd&quot;</span>
+
+<span class="nv">out_ps</span><span class="o">=</span><span class="s2">&quot;afar.ps&quot;</span>
+
+<span class="nv">font</span><span class="o">=</span><span class="s2">&quot;12p,31,black&quot;</span>
+<span class="nv">font_title</span><span class="o">=</span><span class="s2">&quot;15p,29,black&quot;</span>
+
+gmtset <span class="nv">MAP_FRAME_TYPE</span><span class="o">=</span>plain <span class="se">\</span>
+       <span class="nv">FONT_ANNOT_PRIMARY</span><span class="o">=</span><span class="nv">$font</span> <span class="se">\</span>
+       <span class="nv">FONT_LABEL</span><span class="o">=</span><span class="nv">$font</span> <span class="se">\</span>
+       <span class="nv">FONT_TITLE</span><span class="o">=</span><span class="nv">$font_title</span> <span class="se">\</span>
+       <span class="nv">FORMAT_GEO_MAP</span><span class="o">=</span>dddF
+
+<span class="c1"># 製作輸入檔</span>
+<span class="c1"># grdcut ../ETOPO1_Bed_g_gmt4.grd -R25/55/-5/25 -G$in_grd</span>
+grdgradient <span class="nv">$in_grd</span> -G<span class="nv">$in_shadow</span> -A295 -N10
+
+psxy -R0/1/0/1 -JX1c -T -K -P &gt; <span class="nv">$out_ps</span>
+
+psbasemap -R38/44//7/14/-2/3 -JM3i -JZ0.6i -O -K -p60/25 -B2 -Bz2+lkm -BsEwNZ &gt;&gt; <span class="nv">$out_ps</span>
+
+grdview ETOPO1_Bed_g_gmt4_Afar.grd -R38/44//7/14/-2000/3000 -I<span class="nv">$in_shadow</span> -J -JZ -O -K -p -Cmby.cpt -N-2000+ggray -Qi500 &gt;&gt; <span class="nv">$out_ps</span>
+
+psbasemap -R -J -JZ -O -K -p -TdjRB+w1.5c+l,,,N+o2c/0c &gt;&gt; <span class="nv">$out_ps</span>
+psbasemap -R0/1/0/1 -JX4.5i/2.5i -O -K -B+t<span class="s2">&quot;Topography of the Afar Triangle&quot;</span> &gt;&gt; <span class="nv">$out_ps</span>
+
+psxy -R0/1/0/1 -JX1c -O -T &gt;&gt; <span class="nv">$out_ps</span>
+
+psconvert <span class="nv">$out_ps</span> -A -P -Tg
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>「」</p>
+</div>
+<p>觀看<a class="reference internal" href="#id2">最終版地圖</a></p>
+</div>
+<div class="section" id="id7">
+<h2><span class="section-number">15.6. </span>習題<a class="headerlink" href="#id7" title="本標題的永久連結">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="focal_mech.html" class="btn btn-neutral float-right" title="16. 繪製震源機制解" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="editing_cpt_colorbar.html" class="btn btn-neutral float-left" title="14. 色階檔的編修與呈現" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+ <div id="disqus_thread"></div> <script> var disqus_config = function () {this.page.url = 'http://gmt-tutorial.org/view3d.html'; this.page.identifier = 'view3d'; }; (function() { var d = document, s = d.createElement('script'); s.src = '//gmt-tutorials.disqus.com/embed.js'; s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })(); </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  <div role="contentinfo">
+    <p>
+        &#169; 版權所有 2016-21, 鄭懷傑 (Whyjay Zheng)。
+      <span class="lastupdated">
+        最後更新於 8月 06, 2021。
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Found this tutorial helpful? <a href="https://www.paypal.com/donate?hosted_button_id=68GZNRJ3MZDBE">Buy me a milktea!</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>
