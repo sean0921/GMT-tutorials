@@ -1,9 +1,6 @@
-_build/[dh]*
-_build/locale/.doctrees/*
-*~
-todolist.txt
+docs/_build/html
+docs/_build/gettext/_sphinx_design_static
 *.mo
-.zanata-cache
-.zanata-cache/*
+.doctrees
 .ipynb_checkpoints
-locales
+docs/conf.py
